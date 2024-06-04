@@ -1,0 +1,6 @@
+_guideTreeFile /scratch/srb67793/GeraniumPhylogenomics_April32024/NewRun/ChromEvol/PIP/PIP_example/guide_tree
+_dataFile /scratch/srb67793/GeraniumPhylogenomics_April32024/NewRun/ChromEvol/PIP/PIP_example/counts
+_baseNum 14
+_paramTemplates /scratch/srb67793/GeraniumPhylogenomics_April32024/NewRun/ChromEvol/PIP/param_templates/
+_outDir /scratch/srb67793/GeraniumPhylogenomics_April32024/NewRun/ChromEvol/PIP/PIP_example/Geranium_out
+_chromevolExe /scratch/srb67793/GeraniumPhylogenomics_April32024/NewRun/ChromEvol/PIP/PIP/chromEvol
