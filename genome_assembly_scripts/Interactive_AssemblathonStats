@@ -1,0 +1,10 @@
+wget https://raw.githubusercontent.com/KorfLab/Assemblathon/master/assemblathon_stats.pl
+wget https://raw.githubusercontent.com/ucdavis-bioinformatics/assemblathon2-analysis/refs/heads/master/FAlite.pm
+
+export PERL5LIB=/scratch/srb67793/GenomeAssembly_Spr2025/Results/HiFiASM:$PERL5LIB
+
+srun --pty  --cpus-per-task=1 --job-name=interact --ntasks=1 --nodes=1 --partition=inter_p --time=12:00:00 --mem=50GB /bin/bash -l
+
+./assemblathon_stats.pl G_maculatum_BF73.asm.hic.p_ctg.fa > G_maculatum_BF73.asm.hic.p_ctg.stats.txt
+./assemblathon_stats.pl G_maculatum_BF73.asm.hic.hap1.p_ctg.fa > G_maculatum_BF73.asm.hic.hap1.p_ctg.stats.txt
+./assemblathon_stats.pl G_maculatum_BF73.asm.hic.hap2.p_ctg.fa > G_maculatum_BF73.asm.hic.hap2.p_ctg.stats.txt
