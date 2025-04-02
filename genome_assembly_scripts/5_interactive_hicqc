@@ -1,0 +1,3 @@
+#HiC
+#do this interactively 
+#singularity exec /apps/singularity-images/hic_qc_6881c33_ps.sif hic_qc.py -b G_maculatum_BF73.asm.hic.hap1.p_ctg_vs_HiC.sorted.bam
