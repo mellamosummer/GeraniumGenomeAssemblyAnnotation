@@ -7,23 +7,27 @@
 #SBATCH --output=RM1_clean.out
 #SBATCH --error=RM1_clean.err
 
-# script by PBentz 30 NOV 2023
+# script modified from (PBentz 30 NOV 2023)
 
-## name variables:
-# path to genome assembly fasta file (does not need to be masked)
-fasta='/scratch/srb67793/Geranium/Results/FCS/G_maculatum_BF73.asm.hap1.clean.fasta'
-
-## load RepeatMasker
-ml RepeatMasker/4.1.5-foss-2022a
-
-## repeats downloaded from https://www.girinst.org/server/RepBase/index.php
-## use curl to download and make a fasta file, then concatenate with the first script results
-
-## run RepeatMasker
-RepeatMasker $fasta -lib repbase_hap1cleaned.fasta  -cutoff 250 -nolow -pa 16 -xsmall -gff
+#path to genome 
+fasta="/scratch/srb67793/GenomeAssembly_Spr2025/Results/FCS/G_maculatum_BF73-hap1-JBAT.FINAL.clean.fa"
 
 
-## options explained:
+#repeats downloaded from https://www.girinst.org/server/RepBase/index.php
+#downloaded this file to local, then transferred to sapelo2 RepBase30.03.fasta.tar.gz
+#cat RepBase30.03.fasta.tar.gz & (repeat families from repeatmodeler step) > hap1_repeats.fa
+
+#path to concatenated repeats
+repeats="/scratch/srb67793/GenomeAnnotation_Spr2025/repeatmodeler_hap1/hap1_repeats.fa"
+
+# load RepeatMasker
+ml RepeatMasker
+
+# run RepeatMasker
+RepeatMasker $fasta -lib $repeats -cutoff 250 -nolow -pa 16 -xsmall -gff
+
+
+# options explained:
 
 # -cutoff
 #When using a local library you may want to change the minimum score
@@ -32,6 +36,5 @@ RepeatMasker $fasta -lib repbase_hap1cleaned.fasta  -cutoff 250 -nolow -pa 16 -x
 #raising it to 250 will guarantee that all matches are real. Note that
 #low complexity regions in otherwise complex repeat sequences in your
 #library are most likely to give false matches.
-
 # -xsmall returns repetitive regions in lowercase (rest capitals) rather than masked
 # -nolow         does not mask low complexity DNA or simple repeats (recommended for annotation predictions)
