@@ -3,7 +3,7 @@ Scripts for genome assembly
 
 1. Run hifiasm
 2. Use assemblathon to get summary stats
-3. Map HiC reads to assemblies using BWS
+3. Map HiC reads to assemblies using BWA
 4. Convert BAM to SAM with SAMtools
 5. QC HiC reads
 6. Index SAM files
