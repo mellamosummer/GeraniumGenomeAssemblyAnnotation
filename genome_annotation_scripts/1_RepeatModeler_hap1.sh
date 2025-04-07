@@ -1,24 +1,25 @@
 #!/bin/bash
-#SBATCH --job-name=repeat_modeler_clean2
+#SBATCH --job-name=repeat_modeler_clean1
 #SBATCH --partition=highmem_p
 #SBATCH --ntasks=32
 #SBATCH --mem=300gb
 #SBATCH --time=160:00:00
-#SBATCH --output=repeat_modeler2_clean.out
-#SBATCH --error=repeat_modeler2_clean.err
+#SBATCH --output=repeat_modeler1_clean.out
+#SBATCH --error=repeat_modeler1_clean.err
 
 # script by PBentz 30 NOV 2023
 
 ## name variables:
 # path to genome assembly fasta file (does not need to be masked)
-fasta='/scratch/srb67793/Geranium/Results/FCS/G_maculatum_BF73.asm.hap2.clean.fasta '
+fasta="/scratch/srb67793/GenomeAssembly_Spr2025/Results/FCS/G_maculatum_BF73-hap1-JBAT.FINAL.clean.fa"
+
 # name you want to use for repeat databse (e.g., a species code, specimen ID, etc.)
-rep_base='G_maculatum_BF73_hap2_cleaned'
+rep_base='G_maculatum_1663611_BF73_hap1'
 
 ## somewhat following https://darencard.net/blog/2022-07-09-genome-repeat-annotation/
 
 ## load RepeatModeler
-ml RepeatModeler/2.0.4-foss-2022a
+ml RepeatModeler
 
 # make a directory for storing logs
 mkdir -p logs
