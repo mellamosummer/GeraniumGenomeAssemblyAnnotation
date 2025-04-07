@@ -9,4 +9,7 @@ order of scripts used:
 8. yahs scripts
 9. SAMtools yahs scripts
 10. juicer pre (yahs) scripts
-11. juicer scripts
+11. juicer scripts -- download juicer files and load into GUI, export assembly for next step
+12. YAHS post scripts
+13. BUSCO scripts
+14. FCS scripts
