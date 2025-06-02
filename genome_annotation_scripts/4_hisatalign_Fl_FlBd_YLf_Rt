@@ -1,0 +1,83 @@
+==> 2_hisat_align_Fl.sh <==
+#!/bin/sh
+#SBATCH --job-name=HisatAlign1
+#SBATCH --partition=batch
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=srb67793@uga.edu
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=40gb
+#SBATCH --time=7-00:00:00
+#SBATCH --output=HisatAlign.%j.out
+#SBATCH --error=HisatAlign.%j.err
+
+module load HISAT2
+module load SAMtools
+
+reads="/scratch/srb67793/GenomeAnnotation_Spr2025/trimmedreads/paired"
+index="/scratch/srb67793/GenomeAnnotation_Spr2025/BRAKER/G_maculatum_BRAKER_Hap1"
+
+hisat2 -x $index/G_maculatum_BF73-hap1-JBAT.FINAL.clean.fa.masked.index-p -1 $reads/Fl_BF73_GM_1.fastq.gz -2 $reads/Fl_BF73_GM_1.fastq.gz  -p 16 --dta | samtools view -O BAM | samtools sort --threads 16 -o Fl_BF73_G_maculatum_Hap1.bam
+
+
+==> 2_hisat_align_FlBd.sh <==
+#!/bin/bash
+#SBATCH --job-name=HisatAlign1
+#SBATCH --partition=batch
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=srb67793@uga.edu
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=40gb
+#SBATCH --time=7-00:00:00
+#SBATCH --output=HisatAlign.%j.out
+#SBATCH --error=HisatAlign.%j.err
+
+module load HISAT2
+module load SAMtools
+
+reads="/scratch/srb67793/GenomeAnnotation_Spr2025/trimmedreads/paired"
+
+hisat2 -x G_maculatum_BF73-hap1-JBAT.FINAL.clean.fa.masked.index-p -1 $reads/FlBd_BF73_GM_1.fastq.gz -2 $reads/FlBd_BF73_GM_1.fastq.gz  -p 16 --dta | samtools view -O BAM | samtools sort --threads 16 -o FlBd_BF73_G_maculatum_Hap1.bam
+
+
+==> 2_hisat_align_Rt.sh <==
+#!/bin/bash
+#SBATCH --job-name=HisatAlign1
+#SBATCH --partition=batch
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=srb67793@uga.edu
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=40gb
+#SBATCH --time=7-00:00:00
+#SBATCH --output=HisatAlign.%j.out
+#SBATCH --error=HisatAlign.%j.err
+
+module load HISAT2
+module load SAMtools
+
+reads="/scratch/srb67793/GenomeAnnotation_Spr2025/trimmedreads/paired"
+
+hisat2 -x G_maculatum_BF73-hap1-JBAT.FINAL.clean.fa.masked.index-p -1 $reads/Rt_BF73_GM_1.fastq.gz -2 $reads/Rt_BF73_GM_1.fastq.gz  -p 16 --dta | samtools view -O BAM | samtools sort --threads 16 -o Rt_BF73_G_maculatum_Hap1.bam
+
+
+==> 2_hisat_align_YLf.sh <==
+#!/bin/bash
+#SBATCH --job-name=HisatAlign1
+#SBATCH --partition=batch
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=srb67793@uga.edu
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=40gb
+#SBATCH --time=7-00:00:00
+#SBATCH --output=HisatAlign.%j.out
+#SBATCH --error=HisatAlign.%j.err
+
+module load HISAT2
+module load SAMtools
+
+reads="/scratch/srb67793/GenomeAnnotation_Spr2025/trimmedreads/paired"
+
+hisat2 -x G_maculatum_BF73-hap1-JBAT.FINAL.clean.fa.masked.index-p -1 $reads/YLf_BF73_GM_1.fastq.gz -2 $reads/YLf_BF73_GM_1.fastq.gz -p 16 --dta | samtools view -O BAM | samtools sort --threads 16 -o YLf_BF73_G_maculatum_Hap1.bam
