@@ -1,0 +1,32 @@
+# BUSCO version is: 5.8.3 
+# The lineage dataset is: eudicots_odb10 (Creation date: 2024-01-08, number of genomes: 31, number of BUSCOs: 2326)
+# Summarized benchmarking in BUSCO notation for file /scratch/srb67793/GenomeAssembly_Spr2025/Results/FCS/G_maculatum_BF73-hap1-JBAT.FINAL.clean.fa.masked
+# BUSCO was run in mode: euk_genome_min
+# Gene predictor used: miniprot
+
+	***** Results: *****
+
+	C:94.6%[S:24.8%,D:69.9%],F:0.7%,M:4.6%,n:2326,E:1.7%	   
+	2201	Complete BUSCOs (C)	(of which 38 contain internal stop codons)		   
+	576	Complete and single-copy BUSCOs (S)	   
+	1625	Complete and duplicated BUSCOs (D)	   
+	17	Fragmented BUSCOs (F)			   
+	108	Missing BUSCOs (M)			   
+	2326	Total BUSCO groups searched		   
+
+Assembly Statistics:
+	5521	Number of scaffolds
+	5540	Number of contigs
+	3620905194	Total length
+	0.000%	Percent gaps
+	122 MB	Scaffold N50
+	118 MB	Contigs N50
+
+
+Dependencies and versions:
+	hmmsearch: 3.4
+	bbtools: 39.01
+	miniprot_index: 0.13-r248
+	miniprot_align: 0.13-r248
+	python: sys.version_info(major=3, minor=11, micro=3, releaselevel='final', serial=0)
+	busco: 5.8.3

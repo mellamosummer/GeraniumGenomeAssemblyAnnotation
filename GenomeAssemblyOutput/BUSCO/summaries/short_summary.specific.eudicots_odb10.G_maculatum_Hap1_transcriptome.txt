@@ -1,0 +1,19 @@
+# BUSCO version is: 5.8.3 
+# The lineage dataset is: eudicots_odb10 (Creation date: 2024-01-08, number of genomes: 31, number of BUSCOs: 2326)
+# Summarized benchmarking in BUSCO notation for file /scratch/srb67793/GenomeAnnotation_Spr2025/BRAKER/G_maculatum_BRAKER_Hap1/braker/G_maculatum.longest_isoforms.faa
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:92.4%[S:36.1%,D:56.3%],F:0.7%,M:6.9%,n:2326	   
+	2149	Complete BUSCOs (C)			   
+	840	Complete and single-copy BUSCOs (S)	   
+	1309	Complete and duplicated BUSCOs (D)	   
+	16	Fragmented BUSCOs (F)			   
+	161	Missing BUSCOs (M)			   
+	2326	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.4
+	python: sys.version_info(major=3, minor=11, micro=3, releaselevel='final', serial=0)
+	busco: 5.8.3
